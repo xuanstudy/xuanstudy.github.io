@@ -1,0 +1,75 @@
+/* 自定义twikoo评论输入框高度 */
+.tk-input[data-v-619b4c52] .el-textarea__inner {
+    height: 130px !important;
+}
+/* 输入评论时自动隐藏输入框背景图片 */
+.tk-input[data-v-619b4c52] .el-textarea__inner:focus {
+    background-image: none !important;
+}
+/* 调整答复区样式 */
+.tk-replies {
+    left: -70px;
+    width: calc(100% + 70px);
+}
+.tk-replies .tk-avatar {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+}
+.tk-replies .tk-avatar img {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+}
+.tk-content {
+    background: #00a6ff;  /*默认模式气泡配色*/
+    padding: 10px;
+    color: #fff; /*默认模式字体配色*/
+    border-radius: 10px;
+    width: fit-content;
+    font-size: 16px !important;
+    max-width: 100%;
+    position: relative !important;
+    overflow: visible !important;
+    max-height: none !important;
+}
+.tk-content a {
+    color: #eeecaa;/*默认模式超链接配色*/
+}
+/* 气泡三角 */
+.tk-content::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border: 15px solid;
+    position: absolute;
+    top: 20px;
+    left: -13px;
+    border-top: 2px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 15px solid #00a6ff; /*气泡三角配色，需要与气泡配色保持一致*/
+    border-left: 0px solid transparent;
+}
+/* 针对宽屏样式微调 */
+@media screen and (min-width: 768px) {
+    .tk-content {
+        max-width: 85%;
+    }
+}
+.tk-row {
+    max-width: 100%;
+    width: fit-content;
+}
+.tk-avatar {
+    border-radius: 50%;
+    margin-top: 10px;
+}
+/* 夜间模式调整 */
+[data-theme="dark"] .tk-content {
+    background: #000; /*夜间模式气泡配色*/
+    color: #fff; /*夜间模式字体配色*/
+}
+[data-theme="dark"] .tk-content a {
+    color: #dfa036; /*夜间模式超链接配色*/
+}
+[data-theme="dark"] .tk-content::before {
+    border-right: 15px solid #000; /*夜间模式气泡三角配色，需与夜间模式气泡配色保持一致*/
+}
